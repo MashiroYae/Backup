@@ -1,0 +1,55 @@
+# Maintainer: Mashiro <mashiro@mashiro.cat>
+
+pkgname=(emacs-pgtk-mashiro)
+pkgver=29.0.50.$(date "+%Y%m%d")
+pkgrel=1
+pkgdesc='The extensible, customizable, self-documenting real-time display editor'
+arch=('aarch64' 'x86_64')
+url='https://www.gnu.org/software/emacs/emacs.html'
+license=('GPL3')
+depends=('sqlite3'
+         'alsa-utils'
+         'lcms2'
+         'gpm'
+         'dbus'
+         'glibc'
+         'acl'
+         'gnutls'
+         'libxml2'
+         'systemd'
+         'jansson'
+         'mailutils'
+         'libgccjit')
+makedepends=('git'
+             'libgccjit')
+conflicts=(emacs)
+source=("emacs::git://git.savannah.gnu.org/emacs.git")
+sha256sums=('SKIP')
+
+prepare() {
+  cd "$srcdir/emacs"
+
+  [[ -x configure ]] || ( ./autogen.sh git && ./autogen.sh autoconf )
+}
+
+build() {
+  cd "$srcdir/emacs"
+
+  ./configure \
+    --sysconfdir=/etc \
+    --prefix=/usr \
+    --libexecdir=/usr/lib \
+    --localstatedir=/var \
+    --without-compress-install \
+    --with-mailutils \
+    --with-native-compilation \
+    --with-xwidgets \
+    --with-pgtk
+  make
+}
+
+package_emacs-pgtk-mashiro() {
+  cd "$srcdir/emacs"
+
+  make DESTDIR="$pkgdir/" install
+}

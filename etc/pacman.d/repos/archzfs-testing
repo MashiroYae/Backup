@@ -1,0 +1,2 @@
+[archzfs-testing]
+Server = https://archzfs.com/$repo/$arch
