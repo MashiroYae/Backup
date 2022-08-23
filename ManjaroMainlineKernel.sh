@@ -2,7 +2,7 @@
 
 RPiVERSION=5.18.12-2
 VERSION=5.19.3-1
-RCVERSION=6.0.rc1-1
+RCVERSION=6.0.rc2-1
 
 cd /Users/mashiro/Library/Caches/mashiro/aarch64/
 
