@@ -21,7 +21,7 @@ depends=('sqlite3'
          'libgccjit')
 makedepends=('git'
              'libgccjit')
-source=("emacs::git://git.savannah.gnu.org/emacs.git")
+source=("emacs::https://git.savannah.gnu.org/git/emacs.git")
 sha256sums=('SKIP')
 
 prepare() {
