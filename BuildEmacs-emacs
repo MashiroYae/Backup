@@ -13,7 +13,8 @@ if [ -f "/Users/mashiro/Library/Caches/mashiro/x86_64/emacs-mashiro-$(date "+%Y%
     rm -rf /Users/mashiro/Library/Caches/mashiro/emacs/pkg
     rm -rf /Users/mashiro/Library/Caches/mashiro/emacs/src
 
-    /Users/mashiro/Library/Caches/mashiro/UpdateRepo.sh
+    /Users/mashiro/Library/Caches/mashiro/UpdateRepo
+
 
    # cd /Users/mashiro/Library/Caches/mashiro/emacs-pgtk/
    # makepkg
