@@ -3,8 +3,8 @@
 RPiMainlineVersion=5.19.3-1
 RPiRCVersion=6.0.rc3-1
 Version=5.19.6-1
-RC_AArch64=6.0.rc3-1
-RC_x86_64=6.0.0rc3-1
+RC_AArch64=6.0.rc5-1
+RC_x86_64=6.0.0rc5-1
 
 cd /Users/mashiro/Library/Caches/mashiro/aarch64/
 
