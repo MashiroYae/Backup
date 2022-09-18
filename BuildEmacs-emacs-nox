@@ -7,7 +7,7 @@ if [ -f "/Users/mashiro/Library/Caches/mashiro/aarch64/emacs-nox-mashiro-29.0.50
     cd /Users/mashiro/Library/Caches/mashiro/emacs-nox/
     makepkg
 
-    rm /Users/mashiro/Library/Caches/mashiro/aarch64/emacs*.pkg.tar.zst
+    rm /Users/mashiro/Library/Caches/mashiro/aarch64/emacs-nox*.pkg.tar.zst
     mv /Users/mashiro/Library/Caches/mashiro/emacs-nox/*.zst /Users/mashiro/Library/Caches/mashiro/aarch64/
 
     ssh mashiro@15.155.2.5 'rm /Users/mashiro/Library/Caches/mashiro/aarch64/emacs*.pkg.tar.zst'
