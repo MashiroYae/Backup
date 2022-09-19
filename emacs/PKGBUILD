@@ -19,7 +19,6 @@ depends=('sqlite3'
          'systemd'
          'jansson'
          'mailutils'
-         'm17n-lib'
          'libotf'
          'libgccjit')
 makedepends=('git'
@@ -54,5 +53,4 @@ package_emacs-mashiro() {
 
   cd "$srcdir/emacs"
   make DESTDIR="${pkgdir}" install
-
 }
