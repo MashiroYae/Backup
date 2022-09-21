@@ -6,46 +6,46 @@ Version=5.19.6-1
 RC_AArch64=6.0.rc5-1
 RC_x86_64=6.0.0rc6-1
 
-cd /Users/mashiro/Library/Caches/mashiro/aarch64/
+cd /srv/http/mashiro/aarch64/
 
-if [ -f "/Users/mashiro/Library/Caches/mashiro/aarch64/linux-rpi4-mainline-$RPiMainlineVersion-aarch64.pkg.tar.zst" ]
+if [ -f "/srv/http/mashiro/aarch64/linux-rpi4-mainline-$RPiMainlineVersion-aarch64.pkg.tar.zst" ]
   then
       echo 'NyaNya'
   else
-      rm /Users/mashiro/Library/Caches/mashiro/aarch64/linux-rpi4-mainline-*-aarch64.pkg.tar.zst
+      rm /srv/http/mashiro/aarch64/linux-rpi4-mainline-*-aarch64.pkg.tar.zst
       curl -JLO https://mirrors.manjaro.org/repo/arm-unstable/core/aarch64/linux-rpi4-mainline-$RPiMainlineVersion-aarch64.pkg.tar.zst
 fi
 
-if [ -f "/Users/mashiro/Library/Caches/mashiro/aarch64/linux-rpi4-rc-$RPiRCVersion-aarch64.pkg.tar.zst" ]
+if [ -f "/srv/http/mashiro/aarch64/linux-rpi4-rc-$RPiRCVersion-aarch64.pkg.tar.zst" ]
   then
       echo 'NyaNya'
   else
-      rm /Users/mashiro/Library/Caches/mashiro/aarch64/linux-rpi4-rc-*-aarch64.pkg.tar.zst
+      rm /srv/http/mashiro/aarch64/linux-rpi4-rc-*-aarch64.pkg.tar.zst
       curl -JLO https://mirrors.manjaro.org/repo/arm-unstable/core/aarch64/linux-rpi4-rc-$RPiRCVersion-aarch64.pkg.tar.zst
 fi
 
-if [ -f "/Users/mashiro/Library/Caches/mashiro/aarch64/linux-$Version-aarch64.pkg.tar.zst" ]
+if [ -f "/srv/http/mashiro/aarch64/linux-$Version-aarch64.pkg.tar.zst" ]
   then
       echo 'NyaNya'
   else
-      rm /Users/mashiro/Library/Caches/mashiro/aarch64/linux-*-aarch64.pkg.tar.zst
+      rm /srv/http/mashiro/aarch64/linux-*-aarch64.pkg.tar.zst
       curl -JLO https://mirrors.manjaro.org/repo/arm-unstable/core/aarch64/linux-$Version-aarch64.pkg.tar.zst
 fi
 
-if [ -f "/Users/mashiro/Library/Caches/mashiro/aarch64/linux-rc-$RC_AArch64-aarch64.pkg.tar.zst" ]
+if [ -f "/srv/http/mashiro/aarch64/linux-rc-$RC_AArch64-aarch64.pkg.tar.zst" ]
   then
       echo 'NyaNya'
   else
-      rm /Users/mashiro/Library/Caches/mashiro/aarch64/linux-rc-*-aarch64.pkg.tar.zst
+      rm /srv/http/mashiro/aarch64/linux-rc-*-aarch64.pkg.tar.zst
       curl -JLO https://mirrors.manjaro.org/repo/arm-unstable/core/aarch64/linux-rc-$RC_AArch64-aarch64.pkg.tar.zst
 fi
 
 
-cd /Users/mashiro/Library/Caches/mashiro/x86_64
-if [ -f "/Users/mashiro/Library/Caches/mashiro/x86_64/linux60-$RC_x86_64-x86_64.pkg.tar.zst" ]
+cd /srv/http/mashiro/x86_64
+if [ -f "/srv/http/mashiro/x86_64/linux60-$RC_x86_64-x86_64.pkg.tar.zst" ]
   then
       echo 'NyaNya'
   else
-      rm /Users/mashiro/Library/Caches/mashiro/x86_64/linux60-*-x86_64.pkg.tar.zst
+      rm /srv/http/mashiro/x86_64/linux60-*-x86_64.pkg.tar.zst
       curl -JLO https://mirrors.manjaro.org/repo/unstable/core/x86_64/linux60-$RC_x86_64-x86_64.pkg.tar.zst
 fi

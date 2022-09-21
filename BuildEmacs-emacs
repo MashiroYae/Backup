@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-if [ -f "/Users/mashiro/Library/Caches/mashiro/x86_64/emacs-mashiro-$(date "+%Y%m%d")-1-x86_64.pkg.tar.zst" ]
+if [ -f "/srv/http/mashiro/x86_64/emacs-mashiro-$(date "+%Y%m%d")-1-x86_64.pkg.tar.zst" ]
   then
     echo "Nya"
   else
-    rm /Users/mashiro/Library/Caches/mashiro/x86_64/emacs-mashiro*.pkg.tar.zst
+    rm /srv/http/mashiro/x86_64/emacs-mashiro*.pkg.tar.zst
 
-    cd /Users/mashiro/Library/Caches/mashiro/emacs/
+    cd /srv/http/mashiro/emacs/
     makepkg
 
-    mv /Users/mashiro/Library/Caches/mashiro/emacs/*.zst /Users/mashiro/Library/Caches/mashiro/x86_64/
-    rm -rf /Users/mashiro/Library/Caches/mashiro/emacs/pkg
-    rm -rf /Users/mashiro/Library/Caches/mashiro/emacs/src
+    mv /srv/http/mashiro/emacs/*.zst /srv/http/mashiro/x86_64/
+    rm -rf /srv/http/mashiro/emacs/pkg
+    rm -rf /srv/http/mashiro/emacs/src
 
-    /Users/mashiro/Library/Caches/mashiro/UpdateRepo
+    /srv/http/mashiro/UpdateRepo
 fi
