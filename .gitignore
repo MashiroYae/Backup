@@ -2,6 +2,7 @@ aarch64
 x86_64
 
 .emacs.git
+emacs.git
 emacs/emacs
 emacs-nox/emacs
 emacs-pgtk/emacs
