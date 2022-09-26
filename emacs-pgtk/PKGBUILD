@@ -22,7 +22,7 @@ depends=('sqlite3'
          'libgccjit')
 makedepends=('git'
              'libgccjit')
-conflicts=(emacs)
+conflicts=(emacs emacs-nativecomp emacs-nox emacs-mashiro emacs-nox-mashiro)
 source=("emacs::git+https://git.savannah.gnu.org/git/emacs.git")
 sha256sums=('SKIP')
 
@@ -43,7 +43,6 @@ build() {
     --without-compress-install \
     --with-mailutils \
     --with-native-compilation \
-    --with-xwidgets \
     --with-pgtk
   make
 }
