@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-RPiMainlineVersion=5.19.3-1
+Version=5.19.11-3
+RC_AArch64=6.0.rc7-1
+RPiMainlineVersion=5.19.11-1
 RPiRCVersion=6.0.rc7-1
-Version=5.19.6-1
-RC_AArch64=6.0.rc5-1
 RC_x86_64=6.0.0rc7-1
 
 cd /srv/http/mashiro/aarch64/
