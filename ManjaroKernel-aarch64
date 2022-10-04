@@ -5,7 +5,6 @@ RC_AArch64=6.0.rc7-1
 RPiMainlineVersion=5.19.11-1
 RPiRCVersion=linux-rpi4-rc-6.0.rc7-1
 
-
 cd /srv/http/mashiro/aarch64/
 if [ -f "/srv/http/mashiro/aarch64/linux-$Version-aarch64.pkg.tar.zst" ]
   then
@@ -35,6 +34,3 @@ if [ -f "/srv/http/mashiro/aarch64/$RPiRCVersion-aarch64.pkg.tar.zst" ]
       rm /srv/http/mashiro/aarch64/$RPiRCVersion.*.pkg.tar.zst
       curl -JLO https://mirrors.manjaro.org/repo/arm-unstable/core/aarch64/$RPiRCVersion-aarch64.pkg.tar.zst
 fi
-
-
-
