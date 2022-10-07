@@ -1,8 +1,7 @@
-os
-
 .emacs
 .emacs.git
 emacs.git
 emacs/emacs
 emacs-nox/emacs
 emacs-pgtk/emacs
+os
