@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-if [ -f "/srv/http/mashiro/aarch64/emacs-nox-mashiro-29.0.50-$(date "+%Y%m%d").1-aarch64.pkg.tar.zst" ]
+if [ -f "/srv/http/mashiro/os/aarch64/emacs-nox-mashiro-29.0.50-$(date "+%Y%m%d").1-aarch64.pkg.tar.zst" ]
   then
     echo "Nya"
   else
     cd /srv/http/mashiro/emacs-nox/
     makepkg
 
-    rm /srv/http/mashiro/aarch64/emacs-nox*.pkg.tar.zst
-    mv /srv/http/mashiro/emacs-nox/*.zst /srv/http/mashiro/aarch64/
+    rm /srv/http/mashiro/os/aarch64/emacs-nox*.pkg.tar.zst
+    mv /srv/http/mashiro/emacs-nox/*.zst /srv/http/mashiro/os/aarch64/
 
-    ssh mashiro@15.155.2.5 'rm /srv/http/mashiro/aarch64/emacs*.pkg.tar.zst'
-    scp /srv/http/mashiro/aarch64/*.zst mashiro@15.155.2.5:/srv/http/mashiro/aarch64/
+    ssh mashiro@15.155.2.5 'rm /srv/http/mashiro/os/aarch64/emacs*.pkg.tar.zst'
+    scp /srv/http/mashiro/os/aarch64/*.zst mashiro@15.155.2.5:/srv/http/mashiro/os/aarch64/
 
     rm -rf /srv/http/mashiro/emacs-nox/pkg
     rm -rf /srv/http/mashiro/emacs-nox/src

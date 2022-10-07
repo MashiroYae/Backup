@@ -3,10 +3,10 @@
 x86_64=linux60-6.0.0-1
 
 cd /srv/http/mashiro/x86_64
-if [ -f "/srv/http/mashiro/x86_64/$x86_64-x86_64.pkg.tar.zst" ]
+if [ -f "/srv/http/mashiro/os/x86_64/$x86_64-x86_64.pkg.tar.zst" ]
   then
       echo 'NyaNya'
   else
-      rm /srv/http/mashiro/x86_64/*-x86_64.pkg.tar.zst
+      rm /srv/http/mashiro/os/x86_64/*-x86_64.pkg.tar.zst
       curl -JLO https://mirrors.manjaro.org/repo/unstable/core/x86_64/$x86_64-x86_64.pkg.tar.zst
 fi
