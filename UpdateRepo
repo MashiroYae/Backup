@@ -3,7 +3,7 @@
 
 if [ -f "/srv/http/mashiro/os/x86_64/emacs-mashiro-$(date "+%Y%m%d")-1-x86_64.pkg.tar.zst" ]
   then
-    repo-add /srv/http/mashiro/os/x86_64/mashiro.db.tar.gz /srv/http/mashiro/os/x86_64/*.zst
+    repo-add -n /srv/http/mashiro/os/x86_64/mashiro.db.tar.gz /srv/http/mashiro/os/x86_64/*.zst
 
     #rsync -azP --delete /srv/http/mashiro mashiro@15.155.2.111:/srv/http
     #rsync -azP -e 'ssh -p 2322' --delete /srv/http/mashiro mashiro@15.155.2.200:/share/Web
@@ -14,7 +14,7 @@ fi
 
 if [ -f "/srv/http/mashiro/os/x86_64/emacs-pgtk-mashiro-$(date "+%Y%m%d")-1-x86_64.pkg.tar.zst" ]
   then
-    repo-add /srv/http/mashiro/os/x86_64/mashiro.db.tar.gz /srv/http/mashiro/os/x86_64/*.zst
+    repo-add -n /srv/http/mashiro/os/x86_64/mashiro.db.tar.gz /srv/http/mashiro/os/x86_64/*.zst
 
     #rsync -azP --delete /srv/http/mashiro mashiro@15.155.2.111:/srv/http
     #rsync -azP -e 'ssh -p 2322' --delete /srv/http/mashiro mashiro@15.155.2.200:/share/Web
@@ -25,7 +25,7 @@ fi
 
 if [ -f "/srv/http/mashiro/os/aarch64/emacs-nox-mashiro-$(date "+%Y%m%d")-1-aarch64.pkg.tar.zst" ]
   then
-    repo-add /srv/http/mashiro/os/aarch64/mashiro.db.tar.gz /srv/http/mashiro/os/aarch64/*.zst
+    repo-add -n /srv/http/mashiro/os/aarch64/mashiro.db.tar.gz /srv/http/mashiro/os/aarch64/*.zst
 
     #rsync -azP --delete /srv/http/mashiro mashiro@15.155.2.111:/srv/http
     #rsync -azP -e 'ssh -p 2322' --delete /srv/http/mashiro mashiro@15.155.2.200:/share/Web
