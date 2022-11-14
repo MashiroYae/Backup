@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 Version=6.0.2-3
-RC_AArch64=6.1.rc3-1
+RC_AArch64=6.1.rc5-1
 RPiMainlineVersion=6.0.1-1
-RPiRCVersion=linux-rpi4-rc-6.1.rc3-2
+RPiRCVersion=linux-rpi4-rc-6.1.rc4-3
 
-x86_64=linux61-6.1.0rc2-1
+x86_64=linux61-6.1.0rc4-1
 
 cd /srv/http/mashiro/os/aarch64/
 if [ -f "/srv/http/mashiro/os/aarch64/linux-$Version-aarch64.pkg.tar.zst" ]
