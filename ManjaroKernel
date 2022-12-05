@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 Version=6.0.2-3
-RC_AArch64=6.1.rc7-1
+RC_AArch64=6.1.rc8-1
 RPiMainlineVersion=6.0.1-1
 RPiRCVersion=linux-rpi4-rc-6.1.rc7-1
 
