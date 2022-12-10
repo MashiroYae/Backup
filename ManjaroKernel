@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 RC_AArch64=6.1.rc8-1
-RPiRCVersion=linux-rpi4-rc-6.1.rc7-1
+RPiRCVersion=linux-rpi4-rc-6.1.rc8-1
 
 x86_64=linux61-6.1.0rc8-1
 
@@ -18,7 +18,7 @@ if [ -f "/srv/http/mashiro/os/aarch64/$RPiRCVersion-aarch64.pkg.tar.zst" ]
   then
       echo 'NyaNya'
   else
-      rm /srv/http/mashiro/os/aarch64/linux-rpi4-rc-*-aarch64-pkg.tar.zst
+      rm /srv/http/mashiro/os/aarch64/linux-rpi4-rc*.zst
       curl -JLO https://mirrors.manjaro.org/repo/arm-unstable/core/aarch64/$RPiRCVersion-aarch64.pkg.tar.zst
 fi
 
