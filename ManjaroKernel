@@ -3,7 +3,7 @@
 RC_AArch64=6.1.rc8-1
 RPiRCVersion=linux-rpi4-rc-6.1.rc8-1
 
-x86_64=linux61-6.1.0rc8-1
+x86_64=linux62-6.2.0rc1-1
 
 cd /srv/http/mashiro/os/aarch64/
 
