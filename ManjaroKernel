@@ -30,3 +30,6 @@ if [ -f "/srv/http/mashiro/os/x86_64/$x86_64-x86_64.pkg.tar.zst" ]
       rm /srv/http/mashiro/os/x86_64/linux*-x86_64.pkg.tar.zst
       curl -JLO https://mirrors.manjaro.org/repo/unstable/core/x86_64/$x86_64-x86_64.pkg.tar.zst
 fi
+
+repo-add /srv/http/mashiro/os/aarch64/mashiro.db.tar.gz /srv/http/mashiro/os/aarch64/*.zst
+repo-add /srv/http/mashiro/os/x86_64/mashiro.db.tar.gz /srv/http/mashiro/os/x86_64/*.zst
