@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-RC_AArch64=6.3.rc1-1
-RPiRCVersion=linux-rpi4-rc-6.2.rc8-1
+RC_AArch64=6.3.rc2-2
+RPiRCVersion=linux-rpi4-rc-6.3.rc2-1
 
-x86_64=linux62-6.2.0rc8-1
+x86_64=linux63-6.3.0rc3-1
 
 cd /srv/http/mashiro/os/aarch64/
 
