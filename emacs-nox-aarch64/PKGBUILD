@@ -1,0 +1,53 @@
+# Maintainer: Mashiro <mashiro@mashiro.cat>
+
+pkgname=emacs-nox-mashiro
+pkgver=$(date "+%Y%m%d")
+pkgrel=1
+pkgdesc='The extensible, customizable, self-documenting real-time display editor'
+arch=('aarch64' 'x86_64')
+url='https://www.gnu.org/software/emacs/emacs.html'
+license=('GPL3')
+depends=('sqlite3'
+         'lcms2'
+         'gpm'
+         'dbus'
+         'glibc'
+         'acl'
+         'gnutls'
+         'libxml2'
+         'systemd'
+         'jansson'
+         'mailutils'
+         'libgccjit')
+makedepends=('git'
+             'libgccjit')
+conflicts=(emacs emacs-nativecomp emacs-nox emacs-mashiro emacs-pgtk-mashiro)
+source=("emacs::git+https://git.savannah.gnu.org/git/emacs.git")
+sha256sums=('SKIP')
+
+prepare() {
+  cd "$srcdir/emacs"
+  [[ -x configure ]] || ( ./autogen.sh git && ./autogen.sh autoconf )
+}
+
+build() {
+  cd "$srcdir/emacs"
+
+  ./configure \
+  --sysconfdir=/etc \
+  --prefix=/usr \
+  --libexecdir=/usr/lib \
+  --localstatedir=/var \
+  --without-compress-install \
+  --with-mailutils \
+  --with-native-compilation \
+  --without-x \
+  --without-sound
+  CROSS_COMPILE=aarch64-linux-gnu- make
+}
+
+package() {
+  cd "$srcdir/emacs"
+
+  CROSS_COMPILE=aarch64-linux-gnu- make DESTDIR="$pkgdir/" install
+}
