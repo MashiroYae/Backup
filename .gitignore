@@ -1,5 +1,5 @@
 .emacs.git
 emacs/emacs
 emacs-nox/emacs
-emacs-pgtk/emacs
+emacs-wayland/emacs
 os
