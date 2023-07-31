@@ -15,7 +15,7 @@ if [ -f "/srv/http/mashiro/os/x86_64/emacs-nox-mashiro-$(date "+%Y%m%d")-1-x86_6
     echo "Nya"
 fi
 
-if [ -f "/srv/http/mashiro/os/x86_64/emacs-pgtk-mashiro-$(date "+%Y%m%d")-1-x86_64.pkg.tar.zst" ]
+if [ -f "/srv/http/mashiro/os/x86_64/emacs-wayland-mashiro-$(date "+%Y%m%d")-1-x86_64.pkg.tar.zst" ]
   then
     repo-add -n /srv/http/mashiro/os/x86_64/mashiro.db.tar.gz /srv/http/mashiro/os/x86_64/*.zst
   else

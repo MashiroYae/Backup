@@ -21,7 +21,7 @@ depends=('sqlite3'
          'libgccjit')
 makedepends=('git'
              'libgccjit')
-conflicts=(emacs emacs-nativecomp emacs-nox emacs-mashiro emacs-pgtk-mashiro)
+conflicts=(emacs emacs-nativecomp emacs-nox emacs-mashiro emacs-wayland-mashiro)
 source=("emacs::git+https://git.savannah.gnu.org/git/emacs.git")
 sha256sums=('SKIP')
 
