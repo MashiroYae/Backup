@@ -1,6 +1,6 @@
 # Maintainer: Mashiro <mashiro@mashiro.cat>
 
-pkgname=(emacs-pgtk-mashiro)
+pkgname=(emacs-wayland-mashiro)
 pkgver=$(date "+%Y%m%d")
 pkgrel=1
 pkgdesc='The extensible, customizable, self-documenting real-time display editor'
@@ -47,7 +47,7 @@ build() {
   make
 }
 
-package_emacs-pgtk-mashiro() {
+package_emacs-wayland-mashiro() {
   cd "$srcdir/emacs"
 
   make DESTDIR="$pkgdir/" install
