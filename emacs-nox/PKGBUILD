@@ -34,15 +34,15 @@ build() {
   cd "$srcdir/emacs"
 
   ./configure \
-  --sysconfdir=/etc \
-  --prefix=/usr \
-  --libexecdir=/usr/lib \
-  --localstatedir=/var \
-  --without-compress-install \
-  --with-mailutils \
-  --with-native-compilation \
-  --without-x \
-  --without-sound
+    --sysconfdir=/etc \
+    --prefix=/usr \
+    --libexecdir=/usr/lib \
+    --localstatedir=/var \
+    --without-compress-install \
+    --with-mailutils \
+    --with-native-compilation \
+    --without-sound
+    --without-x
   make
 }
 

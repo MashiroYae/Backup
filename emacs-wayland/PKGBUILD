@@ -43,7 +43,8 @@ build() {
     --without-compress-install \
     --with-mailutils \
     --with-native-compilation \
-    --with-pgtk
+    --with-pgtk \
+    --with-sound=alsa \
   make
 }
 
