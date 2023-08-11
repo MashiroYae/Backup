@@ -41,7 +41,7 @@ build() {
     --without-compress-install \
     --with-mailutils \
     --with-native-compilation \
-    --without-sound
+    --without-sound \
     --without-x
   make
 }

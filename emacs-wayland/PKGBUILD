@@ -44,7 +44,7 @@ build() {
     --with-mailutils \
     --with-native-compilation \
     --with-pgtk \
-    --with-sound=alsa \
+    --with-sound=alsa
   make
 }
 
