@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+cd /srv/http/emacs.git && git fetch
+rm -rf /srv/http/emacs && git clone /srv/http/emacs.git /srv/http/emacs
+cd /srv/http/emacs
+/srv/http/emacs/autogen.sh
+/srv/http/emacs/configure
+
+make html -j20
+
+cd /srv/http/org-mode.git && git fetch
+rm -rf /srv/http/org-mode && git clone /srv/http/org-mode.git /srv/http/org-mode
+cd /srv/http/org-mode
+make doc -j20
