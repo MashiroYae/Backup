@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 cd /srv/http/emacs.git && git fetch
 rm -rf /srv/http/emacs && git clone /srv/http/emacs.git /srv/http/emacs
