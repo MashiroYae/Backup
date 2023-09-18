@@ -6,7 +6,7 @@ if [ -f "/srv/http/mashiro/os/x86_64/emacs-nox-mashiro-$(date "+%Y%m%d")-1-x86_6
   else
     rm /srv/http/mashiro/os/x86_64/emacs-nox*.pkg.tar.zst
 
-    cd /srv/http/mashiro/emacs-nox/
+    cd /srv/http/mashiro/emacs-nox/ || exit
     makepkg
 
     mv /srv/http/mashiro/emacs-nox/*.zst /srv/http/mashiro/os/x86_64/
