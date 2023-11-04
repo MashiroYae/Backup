@@ -6,4 +6,7 @@ curl -JLO https://downloads.openwrt.org/snapshots/targets/ramips/mt7620/openwrt-
 tar xf openwrt-imagebuilder-ramips-mt7620.Linux-x86_64.tar.xz
 rm openwrt-imagebuilder-ramips-mt7620.Linux-x86_64.tar.xz
 cd openwrt-imagebuilder-ramips-mt7620.Linux-x86_64 || exit
-make info
+
+make image PROFILE=glinet_gl-mt300a
+make image PROFILE=hiwifi_hc5761
+make image PROFILE=hiwifi_hc5861
