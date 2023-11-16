@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cd /srv/http/Minecraft || exit
+curl -JLO https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+/usr/lib/jvm/java-17-openjdk/bin/java -jar BuildTools.jar --compile-if-changed
