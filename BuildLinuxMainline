@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 rm /srv/http/mashiro/os/x86_64/linux-mainline*
-cd /Users/mashiro/Library/Caches/linux-mainline
-git pull
+cd /Users/mashiro/Library/Caches/ || exit
+git clone https://aur.archlinux.org/linux-mainline
+cd linux-mainline || exit
 makepkg
 
-mv /Users/mashiro/Library/Caches/linux-mainline*.zst /srv/http/mashiro/os/x86_64/
-rm -rf /Users/mashiro/Library/Caches/linux-mainline/pkg
-rm -rf /Users/mashiro/Library/Caches/linux-mainline/src
+mv /Users/mashiro/Library/Caches/linux-mainline/*.zst /srv/http/mashiro/os/x86_64/
+rm -rf /Users/mashiro/Library/Caches/linux-mainline
 
 repo-add -n /srv/http/mashiro/os/x86_64/mashiro.db.tar.gz /srv/http/mashiro/os/x86_64/*.zst
