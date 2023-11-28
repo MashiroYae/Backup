@@ -42,9 +42,7 @@ build() {
     --localstatedir=/var \
     --without-compress-install \
     --with-mailutils \
-    --with-native-compilation \
     --with-pgtk \
-    --with-sound=alsa
   make
 }
 
