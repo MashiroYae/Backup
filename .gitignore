@@ -1,4 +1,11 @@
 emacs/emacs
+emacs/pkg
+emacs/src
 emacs-nox/emacs
+emacs-nox/pkg
+emacs-nox/src
+emacs-nox/*.zst
 emacs-wayland/emacs
+emacs-wayland/pkg
+emacs-wayland/src
 os
