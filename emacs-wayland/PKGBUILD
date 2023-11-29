@@ -42,7 +42,7 @@ build() {
     --localstatedir=/var \
     --without-compress-install \
     --with-mailutils \
-    --with-pgtk \
+    --with-pgtk
   make
 }
 
