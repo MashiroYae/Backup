@@ -40,7 +40,6 @@ build() {
     --localstatedir=/var \
     --without-compress-install \
     --with-mailutils \
-    --without-sound \
     --without-x
   make
 }

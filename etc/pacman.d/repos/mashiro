@@ -1,3 +1,0 @@
-[mashiro]
-SigLevel = Never
-Server = http://15.155.2.5/$repo/os/$arch
