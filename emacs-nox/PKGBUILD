@@ -3,7 +3,7 @@
 pkgname=emacs-nox-mashiro
 pkgver=$(date "+%Y%m%d")
 pkgrel=1
-pkgdesc='The extensible, customizable, self-documenting real-time display editor'
+pkgdesc='The extensible, customizable, self-documenting real-time display editor without X11 support'
 arch=('aarch64' 'x86_64')
 url='https://www.gnu.org/software/emacs/emacs.html'
 license=('GPL3')
