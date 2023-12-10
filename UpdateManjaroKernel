@@ -3,7 +3,7 @@
 RC_AArch64=6.4.rc6-1
 RPiRCVersion=linux-rpi4-rc-6.5.rc2-2
 
-cd /srv/http/mashiro/os/aarch64/
+cd /srv/http/mashiro/os/aarch64/ || exit
 
 if [ -f "/srv/http/mashiro/os/aarch64/linux-rc-$RC_AArch64-aarch64.pkg.tar.zst" ]
   then

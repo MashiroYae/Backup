@@ -4,7 +4,7 @@ if [ -f "/srv/http/mashiro/os/aarch64/emacs-nox-mashiro-$(date "+%Y%m%d").1-aarc
   then
     echo "Nya"
   else
-    cd /srv/http/mashiro/emacs-nox/
+    cd /srv/http/mashiro/emacs-nox/ || exit
     makepkg
 
     rm /srv/http/mashiro/os/aarch64/emacs-nox*.pkg.tar.zst
