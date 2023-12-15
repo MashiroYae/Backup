@@ -19,5 +19,3 @@ if [ -f "/srv/http/mashiro/os/aarch64/$RPiRCVersion-aarch64.pkg.tar.zst" ]
       rm /srv/http/mashiro/os/aarch64/linux-rpi4-rc*.zst
       curl -JLO https://mirrors.manjaro.org/repo/arm-unstable/core/aarch64/$RPiRCVersion-aarch64.pkg.tar.zst
 fi
-
-/srv/http/mashiro/UpdateRepo
