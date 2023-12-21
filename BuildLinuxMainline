@@ -6,4 +6,4 @@ cd linux-mainline || exit
 makepkg
 
 mv /Users/mashiro/Library/Caches/linux-mainline/*.zst /srv/http/mashiro/os/x86_64/
-rm -rf /Users/mashiro/Library/Caches/linux-mainline
+#rm -rf /Users/mashiro/Library/Caches/linux-mainline
