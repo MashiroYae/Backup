@@ -7,4 +7,4 @@ tar xf immortalwrt-imagebuilder-mediatek-filogic.Linux-x86_64.tar.xz
 rm immortalwrt-imagebuilder-mediatek-filogic.Linux-x86_64.tar.xz
 cd immortalwrt-imagebuilder-mediatek-filogic.Linux-x86_64 || exit
 
-make image PROFILE=bananapi_bpi-r3-mini PACKAGES="blockd btrfs-progs cfdisk dosfstools ip-full iw-full kmod-fs-msdos kmod-usb-net-cdc-subset kmod-usb-storage-extras luci luci-app-usteer luci-proto-wireguard luci-ssl-openssl nano-full nvme-cli openssh-sftp-server pciutils usbutils -automount -bridger -ipv6helper -libustream-openssl -ppp -ppp-mod-pppoe"
+make image PROFILE=bananapi_bpi-r3-mini PACKAGES="blockd btrfs-progs cfdisk dosfstools ip-full iw-full kmod-fs-msdos kmod-usb-net-cdc-subset kmod-usb-storage-extras luci luci-app-usteer luci-proto-wireguard luci-ssl-openssl luci-theme-argon nano-full nvme-cli openssh-sftp-server pciutils usbutils -automount -bridger -ipv6helper -kmod-usb-net-cdc-mbim -kmod-usb-net-qmi-wwan -kmod-usb-serial-option -libustream-openssl -ppp -ppp-mod-pppoe -uqmi"
