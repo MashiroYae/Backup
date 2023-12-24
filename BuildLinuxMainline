@@ -4,6 +4,7 @@ rm /srv/http/mashiro/os/x86_64/linux-mainline*
 cd /Users/mashiro/Library/Caches/ || exit
 git clone https://aur.archlinux.org/linux-mainline
 cd linux-mainline || exit
+git pull
 makepkg
 
 mv /Users/mashiro/Library/Caches/linux-mainline/*.zst /srv/http/mashiro/os/x86_64/
