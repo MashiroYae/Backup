@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
+Target=rockchip
+Arch=armv8
+
 cd /srv/http/ImmortalWrt/ImageBuilder || exit
-rm -rf immortalwrt-imagebuilder-rockchip-armv8.Linux-x86_64
-curl -JLO https://downloads.immortalwrt.org/snapshots/targets/rockchip/armv8/immortalwrt-imagebuilder-rockchip-armv8.Linux-x86_64.tar.xz
-tar xf immortalwrt-imagebuilder-rockchip-armv8.Linux-x86_64.tar.xz
-rm immortalwrt-imagebuilder-rockchip-armv8.Linux-x86_64.tar.xz
-cd immortalwrt-imagebuilder-rockchip-armv8.Linux-x86_64 || exit
+rm -rf immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64
+curl -JLO https://downloads.immortalwrt.org/snapshots/targets/$Target/$Arch/immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
+tar xf immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
+rm immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
+cd immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64 || exit
 
 make image PROFILE=friendlyarm_nanopi-r6s PACKAGES="blockd btrfs-progs cfdisk dosfstools ip-full kmod-fs-msdos kmod-usb-net-cdc-subset kmod-usb-storage-extras kmod-usb-storage-uas luci luci-app-argon-config luci-app-usteer luci-proto-wireguard luci-ssl-openssl luci-theme-argon nano-full openssh-sftp-server qrencode usbutils -automount -ipv6helper -libustream-openssl -ppp -ppp-mod-pppoe"
