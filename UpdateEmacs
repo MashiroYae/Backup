@@ -9,7 +9,7 @@ cd /srv/http/emacs || exit
 /srv/http/emacs/configure --without-compress-install --with-mailutils
 
 make -j20
-make html -j20
+make docs -j20
 
 cd /srv/http/org-mode.git  || exit
 git fetch
