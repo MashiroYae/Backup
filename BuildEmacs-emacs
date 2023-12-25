@@ -10,6 +10,5 @@ if [ -f "/srv/http/mashiro/os/x86_64/emacs-mashiro-$(date "+%Y%m%d")-1-x86_64.pk
     makepkg
 
     mv /srv/http/mashiro/emacs/*.zst /srv/http/mashiro/os/x86_64/
-    rm -rf /srv/http/mashiro/emacs/pkg
-    rm -rf /srv/http/mashiro/emacs/src
+    rm -rf /srv/http/mashiro/emacs/{pkg,src}
 fi

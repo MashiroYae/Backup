@@ -10,6 +10,5 @@ if [ -f "/srv/http/mashiro/os/x86_64/emacs-wayland-mashiro-$(date "+%Y%m%d")-1-x
     makepkg
 
     mv /srv/http/mashiro/emacs-wayland/*.zst /srv/http/mashiro/os/x86_64/
-    rm -rf /srv/http/mashiro/emacs-wayland/pkg
-    rm -rf /srv/http/mashiro/emacs-wayland/src
+    rm -rf /srv/http/mashiro/emacs-wayland/{pkg,src}
 fi
