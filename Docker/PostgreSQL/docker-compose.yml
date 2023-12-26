@@ -1,0 +1,11 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:bookworm
+    restart: always
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 5432:5432
+    volumes:
+      - /opt/Docker/PostgreSQL/data:/var/lib/postgresql/data
