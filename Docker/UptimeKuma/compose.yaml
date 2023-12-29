@@ -1,0 +1,8 @@
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:debian
+    ports:
+     - 3001:3001
+    restart: always
+    volumes:
+     - ./data:/app/data
