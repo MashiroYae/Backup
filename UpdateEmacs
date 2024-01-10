@@ -2,11 +2,11 @@
 
 cd /srv/http/emacs.git  || exit
 git fetch
-rm -rf /srv/http/emacs
-git clone /srv/http/emacs.git /srv/http/emacs
-cd /srv/http/emacs || exit
-/srv/http/emacs/autogen.sh
-/srv/http/emacs/configure --without-compress-install --with-mailutils
+rm -rf /srv/http/Emacs
+git clone /srv/http/emacs.git /srv/http/Emacs
+cd /srv/http/Emacs || exit
+/srv/http/Emacs/autogen.sh
+/srv/http/Emacs/configure --without-compress-install --with-mailutils
 
 make -j20
 make docs -j20
