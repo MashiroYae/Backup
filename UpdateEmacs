@@ -9,15 +9,15 @@ cd /srv/http/Emacs || exit
 /srv/http/Emacs/configure --without-compress-install --with-mailutils
 
 make -j$(nproc)
-make docs -j$(nproc)
+make -j$(nproc) docs
 
 cd /srv/http/org-mode.git  || exit
 git -C /srv/http/org-mode.git fetch
 rm -rf /srv/http/org-mode
 git clone /srv/http/org-mode.git /srv/http/org-mode
 cd /srv/http/org-mode || exit
-make autoloads -j$(nproc)
-make doc -j$(nproc)
+make -j$(nproc) autoloads
+make -j$(nproc) doc
 
 cd /srv/http/org-contrib.git  || exit
 git -C /srv/http/org-contrib.git fetch
