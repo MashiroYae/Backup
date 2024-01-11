@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 
 cd /srv/http/emacs.git  || exit
-git fetch
+git -C /srv/http/emacs.git fetch
 rm -rf /srv/http/Emacs
 git clone /srv/http/emacs.git /srv/http/Emacs
 cd /srv/http/Emacs || exit
 /srv/http/Emacs/autogen.sh
 /srv/http/Emacs/configure --without-compress-install --with-mailutils
 
-make -j20
-make docs -j20
+make -j$(nproc)
+make docs -j$(nproc)
 
 cd /srv/http/org-mode.git  || exit
-git fetch
+git -C /srv/http/org-mode.git fetch
 rm -rf /srv/http/org-mode
 git clone /srv/http/org-mode.git /srv/http/org-mode
 cd /srv/http/org-mode || exit
-make autoloads -j20
-make doc -j20
+make autoloads -j$(nproc)
+make doc -j$(nproc)
 
 cd /srv/http/org-contrib.git  || exit
-git fetch
+git -C /srv/http/org-contrib.git fetch
 rm -rf /srv/http/org-contrib
 git clone /srv/http/org-contrib.git /srv/http/org-contrib
 
