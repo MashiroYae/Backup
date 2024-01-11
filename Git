@@ -2,6 +2,6 @@
 
 cd /srv/http/mashiro || exit
 
-git add .
-git commit -m "$(date)"
-git push
+git -C /srv/http/mashiro add .
+git -C /srv/http/mashiro commit -m "$(date)"
+git -C /srv/http/mashiro push
