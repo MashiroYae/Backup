@@ -10,4 +10,4 @@ tar xf openwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
 rm openwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
 cd openwrt-imagebuilder-$Target-$Arch.Linux-x86_64 || exit
 
-make -j$(nproc) image PROFILE=hiwifi_hc5611 PACKAGES="blockd curl dnsmasq-full ip-full iw-full kmod-fs-btrfs kmod-fs-msdos kmod-usb-net-cdc-subset kmod-usb-storage-extras luci luci-app-usteer luci-compat luci-proto-wireguard luci-ssl-openssl openssh-sftp-server qrencode wpad-openssl -dnsmasq -libustream-mbedtls -odhcp6c -odhcp6c -odhcpd-ipv6only -ppp -ppp-mod-pppoe -ppp -ppp-mod-pppoe -wpad-basic-mbedtls"
+make -j$(nproc) image PROFILE=hiwifi_hc5611 PACKAGES="blockd curl dnsmasq-full ip-full iw-full kmod-fs-btrfs kmod-fs-msdos kmod-usb-net-cdc-subset kmod-usb-storage-extras luci luci-app-irqbalance luci-app-usteer luci-compat luci-proto-wireguard luci-ssl-openssl openssh-sftp-server qrencode wpad-openssl -dnsmasq -libustream-mbedtls -odhcp6c -odhcp6c -odhcpd-ipv6only -ppp -ppp-mod-pppoe -ppp -ppp-mod-pppoe -wpad-basic-mbedtls"
