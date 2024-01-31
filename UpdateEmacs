@@ -24,4 +24,4 @@ git -C /srv/http/org-contrib.git fetch
 rm -rf /srv/http/org-contrib
 git clone /srv/http/org-contrib.git /srv/http/org-contrib
 
-rm -rf /Users/mashiro/Library/Caches/emacs/straight
+#rm -rf /Users/mashiro/Library/Caches/emacs/straight
