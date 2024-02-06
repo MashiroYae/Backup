@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd /srv/http/emacs.git  || exit
+cd /srv/http/emacs.git || exit
 git -C /srv/http/emacs.git fetch
 rm -rf /srv/http/Emacs
 git clone /srv/http/emacs.git /srv/http/Emacs
@@ -11,7 +11,7 @@ cd /srv/http/Emacs || exit
 make -j$(nproc)
 make -j$(nproc) docs
 
-cd /srv/http/org-mode.git  || exit
+cd /srv/http/org-mode.git || exit
 git -C /srv/http/org-mode.git fetch
 rm -rf /srv/http/org-mode
 git clone /srv/http/org-mode.git /srv/http/org-mode
@@ -19,7 +19,7 @@ cd /srv/http/org-mode || exit
 make -j$(nproc) autoloads
 make -j$(nproc) doc
 
-cd /srv/http/org-contrib.git  || exit
+cd /srv/http/org-contrib.git || exit
 git -C /srv/http/org-contrib.git fetch
 rm -rf /srv/http/org-contrib
 git clone /srv/http/org-contrib.git /srv/http/org-contrib
