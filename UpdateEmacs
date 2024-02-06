@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-if [ -d "/srv/http/emacs.git" ]
-  then
+if [ -d "/srv/http/emacs.git" ]; then
     cd /srv/http/emacs.git || exit
     git -C /srv/http/emacs.git fetch
 fi
 
-if [ -d "/srv/http/emacs.git" ] && [ -d "/srv/http/Emacs" ]
-  then
+if [ -d "/srv/http/emacs.git" ] && [ -d "/srv/http/Emacs" ]; then
     rm -rf /srv/http/Emacs
     git clone /srv/http/emacs.git /srv/http/Emacs
     cd /srv/http/Emacs || exit
@@ -18,17 +16,25 @@ if [ -d "/srv/http/emacs.git" ] && [ -d "/srv/http/Emacs" ]
     make -j$(nproc) docs
 fi
 
-cd /srv/http/org-mode.git || exit
-git -C /srv/http/org-mode.git fetch
-rm -rf /srv/http/org-mode
-git clone /srv/http/org-mode.git /srv/http/org-mode
-cd /srv/http/org-mode || exit
-make -j$(nproc) autoloads
-make -j$(nproc) doc
+if [ -d "/srv/http/org-mode.git" ]; then
+    cd /srv/http/org-mode.git || exit
+    git -C /srv/http/org-mode.git fetch
+fi
 
-cd /srv/http/org-contrib.git || exit
-git -C /srv/http/org-contrib.git fetch
-rm -rf /srv/http/org-contrib
-git clone /srv/http/org-contrib.git /srv/http/org-contrib
+if [ -d "/srv/http/org-mode.git" ] && [ -d "/srv/http/org-mode" ]; then
+    rm -rf /srv/http/org-mode
+    git clone /srv/http/org-mode.git /srv/http/org-mode
+    cd /srv/http/org-mode || exit
+    make -j$(nproc) autoloads
+    make -j$(nproc) doc
+fi
 
-#rm -rf /Users/mashiro/Library/Caches/emacs/straight
+if [ -d "/srv/http/org-contrib.git" ]; then
+    cd /srv/http/org-contrib.git || exit
+    git -C /srv/http/org-contrib.git fetch
+fi
+
+if [ -d "/srv/http/org-contrib.git" ] && [ -d "/srv/http/org-contrib" ]; then
+    rm -rf /srv/http/org-contrib
+    git clone /srv/http/org-contrib.git /srv/http/org-contrib
+fi
