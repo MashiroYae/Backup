@@ -1,15 +1,22 @@
 #!/usr/bin/env bash
 
-cd /srv/http/emacs.git || exit
-git -C /srv/http/emacs.git fetch
-rm -rf /srv/http/Emacs
-git clone /srv/http/emacs.git /srv/http/Emacs
-cd /srv/http/Emacs || exit
-/srv/http/Emacs/autogen.sh
-/srv/http/Emacs/configure --without-compress-install --with-mailutils
+if [ -d "/srv/http/emacs.git" ]
+  then
+    cd /srv/http/emacs.git || exit
+    git -C /srv/http/emacs.git fetch
+fi
 
-make -j$(nproc)
-make -j$(nproc) docs
+if [ -d "/srv/http/emacs.git" ] && [ -d "/srv/http/Emacs" ]
+  then
+    rm -rf /srv/http/Emacs
+    git clone /srv/http/emacs.git /srv/http/Emacs
+    cd /srv/http/Emacs || exit
+    /srv/http/Emacs/autogen.sh
+    /srv/http/Emacs/configure --without-compress-install --with-mailutils
+
+    make -j$(nproc)
+    make -j$(nproc) docs
+fi
 
 cd /srv/http/org-mode.git || exit
 git -C /srv/http/org-mode.git fetch
