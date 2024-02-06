@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -f "/srv/http/mashiro/os/aarch64/emacs-nox-mashiro-$(date "+%Y%m%d").1-aarch64.pkg.tar.zst" ]
-  then
+if [ -f "/srv/http/mashiro/os/aarch64/emacs-nox-mashiro-$(date "+%Y%m%d").1-aarch64.pkg.tar.zst" ]; then
     echo "Nya"
   else
     cd /srv/http/mashiro/emacs-nox/ || exit
