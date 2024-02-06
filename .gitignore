@@ -1,4 +1,3 @@
-Docker/ActualBudget/actual-data
 Docker/Gitea/gitea
 
 emacs/emacs
@@ -7,7 +6,6 @@ emacs/src
 emacs-nox/emacs
 emacs-nox/pkg
 emacs-nox/src
-emacs-nox/*.zst
 emacs-wayland/emacs
 emacs-wayland/pkg
 emacs-wayland/src
