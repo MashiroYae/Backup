@@ -9,5 +9,3 @@ curl -JLO https://downloads.immortalwrt.org/snapshots/targets/$Target/$Arch/immo
 tar xf immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
 rm immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
 cd immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64 || exit
-
-make -j$(nproc) image PROFILE=bananapi_bpi-r3-mini PACKAGES="auc blockd btrfs-progs cfdisk curl dosfstools ip-full iw-full kmod-fs-msdos kmod-usb-net-cdc-subset kmod-usb-storage-extras luci luci-app-attendedsysupgrade luci-app-homeproxy luci-app-irqbalance luci-app-usteer luci-compat luci-proto-wireguard luci-ssl-openssl nano-full nvme-cli openssh-sftp-server qrencode pciutils usbutils wget-ssl -automount -bridger -ipv6helper -kmod-usb-net-cdc-mbim -kmod-usb-net-qmi-wwan -kmod-usb-serial-option -libustream-openssl -ppp -ppp-mod-pppoe -uqmi"
