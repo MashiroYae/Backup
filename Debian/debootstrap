@@ -1,0 +1,4 @@
+
+
+mkdir /Volumes/root -p
+debootstrap --include=btrfs-progs,gawk,systemd-resolved --exclude=cron,cron-daemon-common,ifupdown,isc-dhcp-client,isc-dhcp-common,mawk,vim-common,vim-tiny --keep-debootstrap-dir unstable . https://deb.debian.org/debian
