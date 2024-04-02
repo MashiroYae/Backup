@@ -16,7 +16,6 @@ depends=('sqlite3'
          'gnutls'
          'libxml2'
          'systemd'
-         'jansson'
          'mailutils'
          'libgccjit')
 makedepends=('git'

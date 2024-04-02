@@ -17,7 +17,6 @@ depends=('sqlite3'
          'gnutls'
          'libxml2'
          'systemd'
-         'jansson'
          'mailutils'
          'libotf'
          'libgccjit')
