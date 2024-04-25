@@ -3,3 +3,4 @@
 cd /srv/http/Minecraft/BuildTools || exit
 curl -JLO https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 /usr/lib/jvm/java-17-openjdk/bin/java -jar BuildTools.jar --compile-if-changed
+/usr/lib/jvm/java-21-openjdk/bin/java -jar BuildTools.jar --rev 1.20.5
