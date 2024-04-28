@@ -10,6 +10,7 @@ tar --use-compress-program=unzstd -xf immortalwrt-imagebuilder-$Target-$Arch.Lin
 rm immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.zst
 cd immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64 || exit
 
+ln -s ../bin .
 ln -s ../dl .
 
 make -j$(nproc) image PROFILE=friendlyarm_nanopi-r6s PACKAGES="auc avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd btrfs-progs cfdisk cifsmount curl dosfstools ip-full kmod-fs-msdos kmod-fs-nfs-v4 kmod-usb-net-cdc-subset kmod-usb-storage-extras kmod-usb-storage-uas ksmbd-avahi-service lsd luci luci-app-3ginfo-lite luci-app-attendedsysupgrade luci-app-dae luci-app-daed luci-app-homeproxy luci-app-irqbalance luci-app-ksmbd luci-app-v2raya luci-proto-modemmanager luci-proto-qmi luci-proto-wireguard luci-ssl-openssl nano-full nfs-kernel-server-utils nfs-utils openssh-sftp-avahi-service qrencode rsync usbutils v2ray-core wget-ssl -automount -ppp-mod-pppoe"
