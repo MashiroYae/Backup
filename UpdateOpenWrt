@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+/srv/http/mashiro/OpenWrt/bcm27xx-bcm2708
+/srv/http/mashiro/OpenWrt/bcm27xx-bcm2710
+/srv/http/mashiro/OpenWrt/bcm27xx-bcm2711
+/srv/http/mashiro/OpenWrt/bcm27xx-bcm2712
+/srv/http/mashiro/OpenWrt/bcm53xx-generic
+/srv/http/mashiro/OpenWrt/mediatek-filogic
+/srv/http/mashiro/OpenWrt/qualcommax-ipq60xx
+/srv/http/mashiro/OpenWrt/ramips-mt7620
+/srv/http/mashiro/OpenWrt/ramips-mt7621
+/srv/http/mashiro/OpenWrt/ramips-mt76x8
+/srv/http/mashiro/OpenWrt/rockchip-armv8
+/srv/http/mashiro/OpenWrt/x86-64
