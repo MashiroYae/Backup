@@ -7,7 +7,7 @@ cd /srv/http/OpenWrt/ImageBuilder || exit
 rm -rf openwrt-imagebuilder-$Target-$Arch.Linux-x86_64
 curl -JLO https://downloads.openwrt.org/snapshots/targets/$Target/$Arch/openwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.zst
 tar --use-compress-program=unzstd -xf openwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.zst
-rm openwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
+rm openwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.zst
 cd openwrt-imagebuilder-$Target-$Arch.Linux-x86_64 || exit
 
 ln -s ../bin .
