@@ -11,4 +11,3 @@ rm immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
 cd immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64 || exit
 
 ln -s ../bin .
-ln -s ../dl .
