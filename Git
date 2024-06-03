@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-cd /srv/http/mashiro || exit
-
-git -C /srv/http/mashiro add .
-git -C /srv/http/mashiro commit -m "$(date)"
-git -C /srv/http/mashiro push
+if [ -d "/srv/http/mashiro" ]; then
+    git -C /srv/http/mashiro add .
+    git -C /srv/http/mashiro commit -m "$(date)"
+    git -C /srv/http/mashiro push
+fi
