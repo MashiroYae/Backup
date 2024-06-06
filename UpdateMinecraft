@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ -d "/srv/http/Minecraft/BuildTools" ]; then
+    cd /srv/http/Minecraft/BuildTools || exit
+    curl -JLO https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+    /usr/lib/jvm/java-21-openjdk/bin/java -jar BuildTools.jar --rev 1.20.6
+fi
