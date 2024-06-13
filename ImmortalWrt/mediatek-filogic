@@ -5,9 +5,9 @@ Arch=filogic
 
 cd /srv/http/ImmortalWrt/ImageBuilder || exit
 rm -rf immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64
-curl -JLO https://downloads.immortalwrt.org/snapshots/targets/$Target/$Arch/immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
-tar xf immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
-rm immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.xz
+curl -JLO https://downloads.immortalwrt.org/snapshots/targets/$Target/$Arch/immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.zst
+tar --use-compress-program=unzstd -xf immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.zst
+rm immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64.tar.zst
 cd immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64 || exit
 
 ln -s ../bin .
