@@ -12,5 +12,6 @@ cd immortalwrt-imagebuilder-$Target-$Arch.Linux-x86_64 || exit
 
 ln -s ../bin .
 
+make -j$(nproc) image PROFILE=friendlyarm_nanopi-r5c PACKAGES="avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd coreutils-cat coreutils-dd coreutils-ls ip-full lsd luci-compat luci-app-daed luci-app-irqbalance luci-app-opkg luci-ssl-openssl nano-full openssh-sftp-avahi-service owut -automount -ipv6helper -kmod-rtw88-8822ce -opkg -ppp -ppp-mod-pppoe -rtl8822ce-firmware -uclient-fetch -wpad-openssl" ROOTFS_PARTSIZE="2048"
 make -j$(nproc) image PROFILE=friendlyarm_nanopi-r5s PACKAGES="avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd coreutils-cat coreutils-dd coreutils-ls ip-full lsd luci-compat luci-app-daed luci-app-irqbalance luci-app-opkg luci-ssl-openssl nano-full openssh-sftp-avahi-service owut -automount -ipv6helper -opkg -ppp -ppp-mod-pppoe -uclient-fetch" ROOTFS_PARTSIZE="2048"
 make -j$(nproc) image PROFILE=friendlyarm_nanopi-r6s PACKAGES="avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd coreutils-cat coreutils-dd coreutils-ls ip-full lsd luci-compat luci-app-daed luci-app-irqbalance luci-app-opkg luci-app-vlmcsd luci-ssl-openssl nano-full openssh-sftp-avahi-service owut -automount -ipv6helper -opkg -ppp -ppp-mod-pppoe -uclient-fetch" ROOTFS_PARTSIZE="2048"
