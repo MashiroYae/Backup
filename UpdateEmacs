@@ -6,7 +6,7 @@ if [ -d "/srv/http/emacs.git" ]; then
 fi
 
 if [ -d "/srv/http/emacs.git" ] && [ -d "/srv/http/Emacs" ]; then
-    rm -rf /srv/http/Emacs
+    rm -rf /srv/http/Emacs/*
     git clone /srv/http/emacs.git /srv/http/Emacs
     cd /srv/http/Emacs || exit
     /srv/http/Emacs/autogen.sh
