@@ -12,4 +12,4 @@ cd openwrt-imagebuilder-$Target-$Arch.Linux-x86_64 || exit
 
 ln -s ../bin .
 
-make -j$(nproc) image PROFILE=hiwifi_hc5611 PACKAGES="apk-openssl avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd coreutils-cat coreutils-ls dmesg dnsmasq-full ip-full iw-full lsd luci-ssl-openssl openssh-sftp-avahi-service owut wpad-openssl -apk-mbedtls -dnsmasq -libustream-mbedtls -odhcp6c -odhcpd-ipv6only -opkg -ppp -ppp-mod-pppoe -uclient-fetch -wpad-basic-mbedtls"
+make -j$(nproc) image PROFILE=hiwifi_hc5611 PACKAGES="apk-openssl avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd dmesg dnsmasq-full ip-full iw-full luci-ssl-openssl openssh-sftp-avahi-service owut wpad-openssl -apk-mbedtls -dnsmasq -libustream-mbedtls -odhcp6c -odhcpd-ipv6only -opkg -ppp -ppp-mod-pppoe -uclient-fetch -wpad-basic-mbedtls"
