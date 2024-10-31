@@ -10,7 +10,7 @@ if [ -d "/srv/http/emacs.git" ] && [ -d "/srv/http/Emacs" ]; then
     git clone /srv/http/emacs.git /srv/http/Emacs
     cd /srv/http/Emacs || exit
     /srv/http/Emacs/autogen.sh
-    /srv/http/Emacs/configure --without-compress-install --with-mailutils --with-pgtk
+    /srv/http/Emacs/configure --without-compress-install --with-mailutils
 
     make -j$(nproc)
     make -j$(nproc) docs
