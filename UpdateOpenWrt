@@ -8,7 +8,7 @@
 /srv/http/mashiro/OpenWrt/mediatek-filogic
 #/srv/http/mashiro/OpenWrt/qualcommax-ipq60xx
 /srv/http/mashiro/OpenWrt/ramips-mt7620
-#/srv/http/mashiro/OpenWrt/ramips-mt7621
+/srv/http/mashiro/OpenWrt/ramips-mt7621
 /srv/http/mashiro/OpenWrt/ramips-mt76x8
 /srv/http/mashiro/OpenWrt/rockchip-armv8
 #/srv/http/mashiro/OpenWrt/x86-64

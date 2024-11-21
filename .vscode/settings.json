@@ -3,34 +3,34 @@
    "editor.accessibilitySupport": "off",
    "editor.fontFamily": "'NotoMono Nerd Font'",
    "editor.fontSize": 18,
+   "editor.guides.bracketPairs": true,
    "editor.minimap.enabled": false,
    "editor.rulers": [
-     40,
-     80
+      40,
+      80
    ],
    "editor.stickyTabStops": true,
    "editor.tabSize": 2,
    "explorer.confirmDragAndDrop": false,
    "files.autoSave": "afterDelay",
    "files.exclude": {
-     "**/.DS_Store": false,
-     "**/.git": false
+      "**/.DS_Store": false,
+      "**/.git": false
    },
    "files.insertFinalNewline": true,
    "git.autofetch": true,
    "git.enableCommitSigning": true,
    "notebook.stickyScroll.enabled": true,
    "terminal.integrated.env.osx": {
-     "FIG_NEW_SESSION": "1",
-     "CW_NEW_SESSION": "1"
+      "CW_NEW_SESSION": "1",
+      "FIG_NEW_SESSION": "1"
    },
    "vsicons.dontShowNewVersionMessage": false,
    "window.commandCenter": false,
    "workbench.colorTheme": "Dracula Theme",
    "workbench.iconTheme": "vscode-icons",
    "workbench.settings.applyToAllProfiles": [
-     "editor.rulers"
+      "editor.rulers"
    ],
    "workbench.sideBar.location": "right"
 }
- 
