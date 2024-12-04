@@ -12,7 +12,51 @@ cd openwrt-imagebuilder-$Target-$Arch.Linux-x86_64 || exit
 
 ln -s ../bin .
 
-make -j$(nproc) image PROFILE=friendlyarm_nanopi-r4s PACKAGES="apk-openssl avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd dmesg dnsmasq-full htop ip-full iw-full luci-app-irqbalance luci-app-package-manager luci-ssl-openssl nano-full openssh-sftp-avahi-service owut wget-ssl -apk-mbedtls -dnsmasq -e2fsprogs -libustream-mbedtls -odhcp6c -odhcpd-ipv6only -ppp -ppp-mod-pppoe -uclient-fetch" ROOTFS_PARTSIZE="4096"
-make -j$(nproc) image PROFILE=friendlyarm_nanopi-r5c PACKAGES="apk-openssl avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd dmesg dnsmasq-full htop hwclock ip-full iw-full  luci-app-irqbalance luci-app-package-manager luci-ssl-openssl nano-full openssh-sftp-avahi-service owut wget-ssl -apk-mbedtls -dnsmasq -kmod-rtw88-8822ce -e2fsprogs -libustream-mbedtls -odhcp6c -odhcpd-ipv6only -ppp -ppp-mod-pppoe -rtl8822ce-firmware -wpad-basic-mbedtls" ROOTFS_PARTSIZE="4096"
-make -j$(nproc) image PROFILE=friendlyarm_nanopi-r5s PACKAGES="apk-openssl avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd dmesg dnsmasq-full htop hwclock ip-full iw-full luci-app-irqbalance luci-app-package-manager luci-ssl-openssl nano-full openssh-sftp-avahi-service owut wget-ssl -apk-mbedtls -dnsmasq -e2fsprogs -libustream-mbedtls -odhcp6c -odhcpd-ipv6only -ppp -ppp-mod-pppoe -uclient-fetch" ROOTFS_PARTSIZE="4096"
-make -j$(nproc) image PROFILE=friendlyarm_nanopi-r6s PACKAGES="apk-openssl avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd dmesg dnsmasq-full htop ip-full iw-full luci-app-irqbalance luci-app-package-manager luci-ssl-openssl nano-full openssh-sftp-avahi-service owut wget-ssl -apk-mbedtls -dnsmasq -e2fsprogs -libustream-mbedtls -odhcp6c -odhcpd-ipv6only -ppp -ppp-mod-pppoe -uclient-fetch" ROOTFS_PARTSIZE="4096"
+mkdir -p files/etc/uci-defaults/
+cat << "EOF" > files/etc/uci-defaults/70-rootpt-resize
+if [ ! -e /etc/rootpt-resize ] \
+&& type parted > /dev/null \
+&& lock -n /var/lock/root-resize
+then
+ROOT_BLK="$(readlink -f /sys/dev/block/"$(awk -e \
+'$9=="/dev/root"{print $3}' /proc/self/mountinfo)")"
+ROOT_DISK="/dev/$(basename "${ROOT_BLK%/*}")"
+ROOT_PART="${ROOT_BLK##*[^0-9]}"
+parted -f -s "${ROOT_DISK}" \
+resizepart "${ROOT_PART}" 100%
+mount_root done
+touch /etc/rootpt-resize
+reboot
+fi
+exit 1
+EOF
+cat << "EOF" > files/etc/uci-defaults/80-rootfs-resize
+if [ ! -e /etc/rootfs-resize ] \
+&& [ -e /etc/rootpt-resize ] \
+&& type losetup > /dev/null \
+&& type resize2fs > /dev/null \
+&& lock -n /var/lock/root-resize
+then
+ROOT_BLK="$(readlink -f /sys/dev/block/"$(awk -e \
+'$9=="/dev/root"{print $3}' /proc/self/mountinfo)")"
+ROOT_DEV="/dev/${ROOT_BLK##*/}"
+LOOP_DEV="$(awk -e '$5=="/overlay"{print $9}' \
+/proc/self/mountinfo)"
+if [ -z "${LOOP_DEV}" ]
+then
+LOOP_DEV="$(losetup -f)"
+losetup "${LOOP_DEV}" "${ROOT_DEV}"
+fi
+resize2fs -f "${LOOP_DEV}"
+mount_root done
+touch /etc/rootfs-resize
+reboot
+fi
+exit 1
+EOF
+
+chmod +x files/etc/uci-defaults/70-rootpt-resize
+chmod +x files/etc/uci-defaults/80-rootfs-resize
+
+make -j$(nproc) image PROFILE=friendlyarm_nanopi-r4s PACKAGES="apk-openssl avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd dmesg dnsmasq-full htop ip-full iw-full losetup luci-app-irqbalance luci-app-package-manager luci-ssl-openssl nano-full openssh-sftp-avahi-service owut parted resize2fs wget-ssl -apk-mbedtls -dnsmasq -e2fsprogs -libustream-mbedtls -odhcp6c -odhcpd-ipv6only -ppp -ppp-mod-pppoe -uclient-fetch" FILES="files"
+make -j$(nproc) image PROFILE=friendlyarm_nanopi-r5s PACKAGES="apk-openssl avahi-daemon-service-http avahi-daemon-service-ssh avahi-dbus-daemon blockd dmesg dnsmasq-full htop hwclock ip-full iw-full losetup luci-app-dockerman luci-app-irqbalance luci-app-package-manager luci-ssl-openssl nano-full openssh-sftp-avahi-service owut parted resize2fs wget-ssl -apk-mbedtls -dnsmasq -e2fsprogs -libustream-mbedtls -odhcp6c -odhcpd-ipv6only -ppp -ppp-mod-pppoe -uclient-fetch" FILES="files"
