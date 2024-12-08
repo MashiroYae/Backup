@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 rm /srv/http/mashiro/os/x86_64/linux-mainline*
-cd /Users/mashiro/Library/Caches/ || exit
-git clone https://aur.archlinux.org/linux-mainline
-cd /Users/mashiro/Library/Caches/linux-mainline || exit
-git -C /Users/mashiro/Library/Caches/linux-mainline pull
-makepkg
+cd /srv/http || exit
 
-mv /Users/mashiro/Library/Caches/linux-mainline/*.zst /srv/http/mashiro/os/x86_64/
-rm -rf /Users/mashiro/Library/Caches/linux-mainline/{pkg,src}
+if [ -d /srv/http/linux-mainline/]; then
+  cd /srv/http/linux-mainline || exit
+  git -C /srv/http/linux-mainline pull
+  makepkg
+  mv /srv/http/linux-mainline/*.zst /srv/http/mashiro/os/x86_64/
+  rm -rf /srv/http/linux-mainline/{pkg,src}
+
+#git clone https://aur.archlinux.org/linux-mainline
