@@ -3,7 +3,7 @@
 rm /srv/http/mashiro/os/x86_64/linux-mainline*
 cd /srv/http || exit
 
-if [ -d /srv/http/linux-mainline/ ]; then
+if [ -d "/srv/http/linux-mainline" ]; then
     cd /srv/http/linux-mainline || exit
     git -C /srv/http/linux-mainline pull
     makepkg
