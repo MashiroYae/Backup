@@ -3,11 +3,12 @@
 rm /srv/http/mashiro/os/x86_64/linux-mainline*
 cd /srv/http || exit
 
-if [ -d /srv/http/linux-mainline/]; then
-  cd /srv/http/linux-mainline || exit
-  git -C /srv/http/linux-mainline pull
-  makepkg
-  mv /srv/http/linux-mainline/*.zst /srv/http/mashiro/os/x86_64/
-  rm -rf /srv/http/linux-mainline/{pkg,src}
+if [ -d /srv/http/linux-mainline/ ]; then
+    cd /srv/http/linux-mainline || exit
+    git -C /srv/http/linux-mainline pull
+    makepkg
+    mv /srv/http/linux-mainline/*.zst /srv/http/mashiro/os/x86_64/
+    rm -rf /srv/http/linux-mainline/{pkg,src}
+fi
 
 #git clone https://aur.archlinux.org/linux-mainline
